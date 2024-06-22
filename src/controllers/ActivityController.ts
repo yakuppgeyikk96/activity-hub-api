@@ -40,9 +40,6 @@ router.post(
   "/upload-image/:id",
   upload.single("image"),
   async (req: Request, res: Response) => {
-    console.log(req.params.id);
-    console.log(req.file);
-
     if (!req.file) {
       return res.status(400).send({ message: "No content!" });
     }

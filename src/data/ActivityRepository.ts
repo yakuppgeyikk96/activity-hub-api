@@ -5,7 +5,7 @@ export const getAllActivities = async () => {
   try {
     const activities = await Activity.find().populate({
       path: "createdBy",
-      select: "name email",
+      select: "name email type",
     });
 
     if (!activities) {

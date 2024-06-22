@@ -1,5 +1,4 @@
 import { Storage } from "@google-cloud/storage";
-import path from "path";
 const storage = new Storage({
   keyFilename: "./activityhub-421619-18553cfec884.json",
 });

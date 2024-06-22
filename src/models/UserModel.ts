@@ -8,6 +8,7 @@ export interface IUser {
   password: string;
   createdAt?: Date;
   updatedAt?: Date;
+  type: "individual" | "company" | "community";
 }
 
 const userSchema: Schema = new Schema({
@@ -16,6 +17,11 @@ const userSchema: Schema = new Schema({
   password: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date },
+  type: {
+    type: String,
+    required: true,
+    enum: ["individual", "company", "community"],
+  },
 });
 
 userSchema.pre("save", async function (next) {

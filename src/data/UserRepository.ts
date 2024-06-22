@@ -44,8 +44,8 @@ export const saveUser = async (user: IUser) => {
     const newUser = new User({ ...user });
     await newUser.save();
     return generateApiResponse<IUser>(true, 201, "User created", newUser);
-  } catch (error) {
-    return generateApiResponse<IUser>(false, 500, "Unexpected error", null);
+  } catch (error: any) {
+    return generateApiResponse<IUser>(false, 500, error.message, null);
   }
 };
 
