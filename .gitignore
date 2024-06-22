@@ -2,4 +2,4 @@
 /package-lock.json
 /uploads
 /activityhub-421619-18553cfec884.json
-/src/.env
+.env
